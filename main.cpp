@@ -84,7 +84,7 @@ void readfile(const string &filename, vector<long> &A)
     file.close();
 }
 
-// A função copia o vetor original e o ordena, depois compara com o insertion sort e o selection sort, essa função é apenas para testar a ordenação da solução
+// A função copia o vetor original e o ordena, depois compara com o insertion sort e o selection sort, essa função é apenas para testar a ordem da solução
 bool testasolucao(vector<long> teste, vector<long> vec)
 {
     sort(teste.begin(), teste.end());
@@ -126,7 +126,7 @@ int main(int argc, char **argv)
     insertionsort(A, n);
     auto fim1 = high_resolution_clock::now();
 
-    // Utilize essa função para verificar o ordenamento da função (basta descomentar, se a função retornar falso, então o programa vai parar)
+    // Utilize essa função para verificar o ordenamento do vetor (basta descomentar, se a função retornar falso, então o programa vai parar)
     // assert(testasolucao(teste, A));
 
     auto tempo1 = duration_cast<microseconds>(fim1 - inicio1);
@@ -147,7 +147,7 @@ int main(int argc, char **argv)
     selectionsort(A2, n);
     auto fim2 = high_resolution_clock::now();
 
-    // Utilize essa função para verificar o ordenamento da função (basta descomentar, se a função retornar falso, então o programa vai parar)
+    // Utilize essa função para verificar o ordenamento do vetor (basta descomentar, se a função retornar falso, então o programa vai parar)
     // assert(testasolucao(teste, A2));
 
     auto tempo2 = duration_cast<microseconds>(fim2 - inicio2);
