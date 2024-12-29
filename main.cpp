@@ -14,10 +14,10 @@ using namespace chrono;
 vector<long> insertionsort(vector<long> &A, int n)
 {
 
-    int pivo = 0;
+    long pivo = 0;
     int j = 0;
 
-    for (int i = 1; i <= n - 1; i++)
+    for (int i = 1; i < n; i++)
     {
 
         pivo = A[i];
@@ -37,13 +37,13 @@ vector<long> insertionsort(vector<long> &A, int n)
 vector<long> selectionsort(vector<long> &A, int n)
 {
 
-    int min = 0;
-    int aux = 0;
+    long min = 0;
+    long aux = 0;
     for (int i = 0; i <= n - 2; i++)
 
     {
         min = i;
-        for (int j = i + 1; j <= n - 1; j++)
+        for (int j = i + 1; j < n; j++)
         {
             if (A[j] < A[min])
             {
@@ -132,7 +132,7 @@ int main(int argc, char **argv)
     auto tempo1 = duration_cast<microseconds>(fim1 - inicio1);
 
     cout << "Tempo do insertion sort: " << endl;
-    cout << (tempo1.count() / 1e7) << endl;
+    cout << (tempo1.count() / 1e6) << endl;
     cout << "Sequência: " << endl;
 
     for (int i = 0; i < n; i++)
@@ -153,7 +153,7 @@ int main(int argc, char **argv)
     auto tempo2 = duration_cast<microseconds>(fim2 - inicio2);
 
     cout << "Tempo do selection sort: " << endl;
-    cout << (tempo2.count() / 1e7) << endl;
+    cout << (tempo2.count() / 1e6) << endl;
     cout << "Sequência: " << endl;
 
     for (int i = 0; i < n; i++)
